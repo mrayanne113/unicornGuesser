@@ -86,6 +86,7 @@ function enableBttns() {
   clearField.disabled = !clearField.disabled;
   guessBttn.disabled = !guessBttn.disabled;
   resetGame.disabled = !resetGame.disabled;
+  
 }
 
 function levelClear() {

@@ -131,3 +131,53 @@ h3 {
   margin-left: 5px;
 }
 
+@media (min-height: 300px) {
+ body {
+  height: 100%;
+  width: 100%;
+ }
+ 
+ header {
+  height: 200px;
+  font-size: 6rem;
+  align-items: center;
+ }
+
+ .all-inside {
+   width: 100%;
+ }
+
+ input {
+   width: 94%;
+   font-size: 6rem;
+   border: 0.5px solid #404041;
+ }
+
+ .guess-bttn,
+ .reset {
+   border-radius: 51px;
+   width: 94%;
+   height: 68px;
+   font-size: 5rem;
+ }
+
+ .guess-number {
+   margin-right: 0;
+ }
+ 
+ .user-guess-number {
+   font-size: 15rem;
+ }
+
+ .last-guess,
+ .low-or-high,
+ .high-score-placeholder, 
+ .high-score,
+ .guess-count-placeholder,
+ .guess-count,
+ .unicorn-rescued-placeholder,
+ .unicorn-rescued {
+  font-size: 4rem;
+ }
+
+}
