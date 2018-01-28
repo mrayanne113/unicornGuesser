@@ -15,14 +15,12 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
-// userGuess.addEventListener('keyup', enableBttns)
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
 
 // on page load
 newNumber();
-// disableBttns();
 
 
 // functions
@@ -76,18 +74,6 @@ function clearInput() {
   userGuess.value = '';
 }
 
-// function disableBttns() {
-//   clearField.disabled = 'true';
-//   guessBttn.disabled = 'true';
-//   resetGame.disabled = 'true';
-// }
-
-// function enableBttns() {
-//   clearField.disabled = !clearField.disabled;
-//   guessBttn.disabled = !guessBttn.disabled;
-//   resetGame.disabled = !resetGame.disabled;
-  
-// }
 
 function levelClear() {
   event.preventDefault();
@@ -135,13 +121,13 @@ function levelTwo() {
 
 function levelThree() {
   // yellow
-  userGuess.style.color = '#FFFD54';
-  headerColor.style.color = '#FFFD54';
-  showUserGuess.style.color = '#FFFD54';
+  userGuess.style.color = '#F9CC46';
+  headerColor.style.color = '#F9CC46';
+  showUserGuess.style.color = '#F9CC46';
   showUserGuess.innerText = 'You saved unicorn Pam';
-  guessBttn.style.backgroundColor = '#FFFD54';
-  clearField.style.backgroundColor = '#FFFD54';
-  resetGame.style.backgroundColor = '#FFFD54';
+  guessBttn.style.backgroundColor = '#F9CC46';
+  clearField.style.backgroundColor = '#F9CC46';
+  resetGame.style.backgroundColor = '#F9CC46';
 }
 
 function levelFour() {
@@ -160,7 +146,7 @@ function levelFive() {
   userGuess.style.color = '#0025F5';
   headerColor.style.color = '#0025F5';
   showUserGuess.style.color = '#0025F5';
-  showUserGuess.innerText = 'You saved unicorn Leena';
+  showUserGuess.innerText = 'You saved unicorn Leta';
   guessBttn.style.backgroundColor = '#0025F5';
   clearField.style.backgroundColor = '#0025F5';
   resetGame.style.backgroundColor = '#0025F5';
@@ -192,3 +178,19 @@ function winnerWinner() {
   alert('cool shit');
 }
 
+
+// userGuess.addEventListener('keyup', enableBttns)
+// disableBttns();
+
+// function disableBttns() {
+//   clearField.disabled = 'true';
+//   guessBttn.disabled = 'true';
+//   resetGame.disabled = 'true';
+// }
+
+// function enableBttns() {
+//   clearField.disabled = !clearField.disabled;
+//   guessBttn.disabled = !guessBttn.disabled;
+//   resetGame.disabled = !resetGame.disabled;
+  
+// }
