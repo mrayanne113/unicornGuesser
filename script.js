@@ -15,14 +15,14 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
-userGuess.addEventListener('blur', enableBttns)
+// userGuess.addEventListener('keyup', enableBttns)
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
 
 // on page load
 newNumber();
-disableBttns();
+// disableBttns();
 
 
 // functions
@@ -76,18 +76,18 @@ function clearInput() {
   userGuess.value = '';
 }
 
-function disableBttns() {
-  clearField.disabled = 'true';
-  guessBttn.disabled = 'true';
-  resetGame.disabled = 'true';
-}
+// function disableBttns() {
+//   clearField.disabled = 'true';
+//   guessBttn.disabled = 'true';
+//   resetGame.disabled = 'true';
+// }
 
-function enableBttns() {
-  clearField.disabled = !clearField.disabled;
-  guessBttn.disabled = !guessBttn.disabled;
-  resetGame.disabled = !resetGame.disabled;
+// function enableBttns() {
+//   clearField.disabled = !clearField.disabled;
+//   guessBttn.disabled = !guessBttn.disabled;
+//   resetGame.disabled = !resetGame.disabled;
   
-}
+// }
 
 function levelClear() {
   event.preventDefault();

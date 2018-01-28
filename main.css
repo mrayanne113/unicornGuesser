@@ -131,10 +131,13 @@ h3 {
   margin-left: 5px;
 }
 
-@media (min-height: 300px) {
+
+
+@media (min-width: 300px) {
  body {
-  height: 100%;
-  width: 100%;
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
  }
  
  header {
@@ -148,21 +151,26 @@ h3 {
  }
 
  input {
-   width: 94%;
-   font-size: 6rem;
+   width: 91%;
+   font-size: 5rem;
    border: 0.5px solid #404041;
  }
 
  .guess-bttn,
  .reset {
    border-radius: 51px;
-   width: 94%;
+   width: 93%;
    height: 68px;
-   font-size: 5rem;
+   font-size: 3rem;
+ }
+
+ .reset {
+   margin-bottom: 30px;
  }
 
  .guess-number {
    margin-right: 0;
+   margin-top: 45px;
  }
  
  .user-guess-number {
@@ -177,7 +185,7 @@ h3 {
  .guess-count,
  .unicorn-rescued-placeholder,
  .unicorn-rescued {
-  font-size: 4rem;
+  font-size: 2.6rem;
  }
 
 }
