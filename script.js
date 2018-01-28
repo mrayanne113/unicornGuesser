@@ -6,6 +6,7 @@ var showUserGuess = document.querySelector('.user-guess-number');
 var clearField = document.querySelector('.clear-number');
 var resetGame = document.querySelector('.reset');
 var headerColor = document.querySelector('.header-h1');
+var rangeMax = document.querySelector('.range-numbers');
 
 // counts
 var count = 0;
@@ -51,9 +52,64 @@ function feedbackOfGuess(guessParse) {
 }
 
 function newNumber() {
-  var max = 100;
-  var min = 1;
+  max = 15;
+  min = 1;
+  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min));
+  rangeMax.innerText = max; 
+  console.log(randomNumber)
+  return randomNumber;
+}
+
+function newNumberTwo() {
+  max = 30;
+  min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
+  rangeMax.innerText = max;
+  console.log(randomNumber)
+  return randomNumber;
+}
+
+function newNumberThree() {
+  max = 45;
+  min = 1;
+  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
+  rangeMax.innerText = max;
+  console.log(randomNumber)
+  return randomNumber;
+}
+
+function newNumberFour() {
+  max = 60;
+  min = 1;
+  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
+  rangeMax.innerText = max;
+  console.log(randomNumber)
+  return randomNumber;
+}
+
+function newNumberFive() {
+  max = 85;
+  min = 1;
+  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
+  rangeMax.innerText = max;
+  console.log(randomNumber)
+  return randomNumber;
+}
+
+function newNumberSix() {
+  max = 90;
+  min = 1;
+  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
+  rangeMax.innerText = max;
+  console.log(randomNumber)
+  return randomNumber;
+}
+
+function newNumberSeven() {
+  max = 110;
+  min = 1;
+  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
+  rangeMax.innerText = max;
   console.log(randomNumber)
   return randomNumber;
 }
@@ -83,20 +139,25 @@ function levelClear() {
 function checkLevel() {
   if (unicorns === 1) {
     levelTwo();
+    newNumberTwo();
   } else if (unicorns === 2) {
     levelThree();
+    newNumberThree();
   } else if (unicorns === 3) {
     levelFour();
+    newNumberFour();
   } else if (unicorns === 4) {
     levelFive();
+    newNumberFive();
   } else if (unicorns === 5) {
     levelSix();
+    newNumberSix();
   } else if (unicorns === 6) {
     levelSeven();
+    newNumberSeven();
   } else if (unicorns === 7) {
     winnerWinner();
   }
-  newNumber(); 
 }
 
 function WinnerLevelUp() {
@@ -105,7 +166,7 @@ function WinnerLevelUp() {
   guessCount++;
   document.querySelector('.unicorn-rescued').innerText = unicorns;
   document.querySelector('.high-score').innerText = count;
-  lowOrHigh.innerText = 'BOOM!!';
+  lowOrHigh.innerText = 'BOOM!! Keep on Guessing';
 }
 
 function levelTwo() {
@@ -113,7 +174,7 @@ function levelTwo() {
   userGuess.style.color = '#EE6B2D';
   headerColor.style.color = '#EE6B2D';
   showUserGuess.style.color = '#EE6B2D';
-  showUserGuess.innerText = 'You saved unicorn David';
+  showUserGuess.innerText = 'You saved Unicorn David';
   guessBttn.style.backgroundColor = '#EE6B2D';
   clearField.style.backgroundColor = '#EE6B2D';
   resetGame.style.backgroundColor = '#EE6B2D';
@@ -124,7 +185,7 @@ function levelThree() {
   userGuess.style.color = '#F9CC46';
   headerColor.style.color = '#F9CC46';
   showUserGuess.style.color = '#F9CC46';
-  showUserGuess.innerText = 'You saved unicorn Pam';
+  showUserGuess.innerText = 'You saved Unicorn Pam';
   guessBttn.style.backgroundColor = '#F9CC46';
   clearField.style.backgroundColor = '#F9CC46';
   resetGame.style.backgroundColor = '#F9CC46';
@@ -135,7 +196,7 @@ function levelFour() {
   userGuess.style.color = '#387D22';
   headerColor.style.color = '#387D22';
   showUserGuess.style.color = '#387D22';
-  showUserGuess.innerText = 'You saved unicorn Nathaniel';
+  showUserGuess.innerText = 'You saved Unicorn Nathaniel';
   guessBttn.style.backgroundColor = '#387D22';
   clearField.style.backgroundColor = '#387D22';
   resetGame.style.backgroundColor = '#387D22';
@@ -143,13 +204,13 @@ function levelFour() {
 
 function levelFive() {
   // blue
-  userGuess.style.color = '#0025F5';
-  headerColor.style.color = '#0025F5';
-  showUserGuess.style.color = '#0025F5';
-  showUserGuess.innerText = 'You saved unicorn Leta';
-  guessBttn.style.backgroundColor = '#0025F5';
-  clearField.style.backgroundColor = '#0025F5';
-  resetGame.style.backgroundColor = '#0025F5';
+  userGuess.style.color = '#001A8E';
+  headerColor.style.color = '#001A8E';
+  showUserGuess.style.color = '#001A8E';
+  showUserGuess.innerText = 'You saved Unicorn Leta';
+  guessBttn.style.backgroundColor = '#001A8E';
+  clearField.style.backgroundColor = '#001A8E';
+  resetGame.style.backgroundColor = '#001A8E';
 }
 
 function levelSix() {
@@ -157,7 +218,7 @@ function levelSix() {
   userGuess.style.color = '#43137D';
   headerColor.style.color = '#43137D';
   showUserGuess.style.color = '#43137D';
-  showUserGuess.innerText = 'You saved unicorn Louisa';
+  showUserGuess.innerText = 'You saved Unicorn Louisa';
   guessBttn.style.backgroundColor = '#43137D';
   clearField.style.backgroundColor = '#43137D';
   resetGame.style.backgroundColor = '#43137D';
@@ -168,7 +229,7 @@ function levelSeven() {
   userGuess.style.color = '#AC47F6';
   headerColor.style.color = '#AC47F6';
   showUserGuess.style.color = '#AC47F6';
-  showUserGuess.innerText = 'You saved unicorn Jeff';
+  showUserGuess.innerText = 'You saved Unicorn Jeff';
   guessBttn.style.backgroundColor = '#AC47F6';
   clearField.style.backgroundColor = '#AC47F6';
   resetGame.style.backgroundColor = '#AC47F6';
