@@ -152,7 +152,7 @@ h3 {
 
  input {
    width: 91%;
-   font-size: 5rem;
+   font-size: 7rem;
    border: 0.5px solid #404041;
  }
 
@@ -160,8 +160,8 @@ h3 {
  .reset {
    border-radius: 51px;
    width: 93%;
-   height: 68px;
-   font-size: 3rem;
+   height: 90px;
+   font-size: 6rem;
  }
 
  .reset {
@@ -181,7 +181,7 @@ h3 {
  .guess-count,
  .unicorn-rescued-placeholder,
  .unicorn-rescued {
-  font-size: 2.6rem;
+  font-size: 3.5rem;
  }
 
 }
