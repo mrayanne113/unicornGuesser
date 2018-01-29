@@ -44,6 +44,9 @@ function feedbackOfGuess(guessParse) {
   } else if (randomNumber < guessParse) {
     guessCount++;
     lowOrHigh.innerText = 'That was too high'
+  } else if (guessParse.length = 3){
+    showUserGuess.innerText = '??';
+    lowOrHigh.innerText = 'Error';
   } else {
     showUserGuess.innerText = '??';
     lowOrHigh.innerText = 'Error';
@@ -233,10 +236,13 @@ function levelSeven() {
   guessBttn.style.backgroundColor = '#AC47F6';
   clearField.style.backgroundColor = '#AC47F6';
   resetGame.style.backgroundColor = '#AC47F6';
+  winnerWinner();
 }
 
 function winnerWinner() {
   alert('cool shit');
+  console.log('blonde')
+  lowOrHigh.innerText = 'You have rescued all of the unicorns, hit reset to play again';
 }
 
 
