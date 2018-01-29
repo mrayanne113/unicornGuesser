@@ -16,6 +16,7 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
+userGuess.addEventListener('focusout', theUsersGuess);
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
@@ -38,13 +39,13 @@ function feedbackOfGuess(guessParse) {
   if (randomNumber === guessParse) {
     WinnerLevelUp();
     checkLevel();
-  } else if (randomNumber > guessParse) {
+  } if (randomNumber > guessParse) {
     guessCount++;
     lowOrHigh.innerText = 'That was too low';
-  } else if (randomNumber < guessParse) {
+  } if (randomNumber < guessParse) {
     guessCount++;
     lowOrHigh.innerText = 'That was too high'
-  } else if (guessParse.length = 3){
+  } if (guessParse.length = 3){
     showUserGuess.innerText = '??';
     lowOrHigh.innerText = 'Error';
   } else {
@@ -126,7 +127,7 @@ function resetTheGame() {
   document.querySelector('.high-score').innerText = count;
   document.querySelector('.guess-count').innerText = guessCount;
   document.querySelector('.unicorn-rescued').innerText = unicorns;
-  lowOrHigh.innerText = 'Pick a number, between 1 and 15 to start, if you rescue a unicorn the range opens up by 15';
+  lowOrHigh.innerText = 'Guess a number between 1 and 15 to start, if you rescue a unicorn the range opens up by 15';
 }
 
 function clearInput() {
