@@ -36,16 +36,17 @@ function theUsersGuess() {
 }
 
 function feedbackOfGuess(guessParse) {
+  console.log('ckicken')
   if (randomNumber === guessParse) {
     WinnerLevelUp();
     checkLevel();
-  } if (randomNumber > guessParse) {
+  } else if (randomNumber > guessParse) {
     guessCount++;
     lowOrHigh.innerText = 'That was too low';
-  } if (randomNumber < guessParse) {
+  } else if (randomNumber < guessParse) {
     guessCount++;
     lowOrHigh.innerText = 'That was too high'
-  } if (guessParse.length = 3){
+  } else if (guessParse.length = 3){
     showUserGuess.innerText = '??';
     lowOrHigh.innerText = 'Error';
   } else {
