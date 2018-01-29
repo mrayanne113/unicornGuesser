@@ -126,6 +126,7 @@ function resetTheGame() {
   document.querySelector('.high-score').innerText = count;
   document.querySelector('.guess-count').innerText = guessCount;
   document.querySelector('.unicorn-rescued').innerText = unicorns;
+  lowOrHigh.innerText = 'Pick a number, between 1 and 15 to start, if you rescue a unicorn the range opens up by 15';
 }
 
 function clearInput() {
@@ -240,9 +241,9 @@ function levelSeven() {
 }
 
 function winnerWinner() {
-  alert('cool shit');
   console.log('blonde')
   lowOrHigh.innerText = 'You have rescued all of the unicorns, hit reset to play again';
+  alert('cool shit');
 }
 
 
