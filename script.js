@@ -16,7 +16,7 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
-// userGuess.addEventListener('blur', theUsersGuess);
+userGuess.addEventListener('blur', theUsersGuess);
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
@@ -36,7 +36,6 @@ function theUsersGuess() {
 }
 
 function feedbackOfGuess(guessParse) {
-  console.log('ckicken')
   if (randomNumber === guessParse) {
     WinnerLevelUp();
     checkLevel();
@@ -46,6 +45,8 @@ function feedbackOfGuess(guessParse) {
   } else if (randomNumber < guessParse) {
     guessCount++;
     lowOrHigh.innerText = 'That was too high'
+  } else if (guessParse >= 110) {
+    showUserGuess.innerText = 'Thats not the in the range';
   } else if (guessParse.length = 3){
     showUserGuess.innerText = '??';
     lowOrHigh.innerText = 'Error';
