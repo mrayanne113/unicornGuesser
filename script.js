@@ -8,6 +8,7 @@ var resetGame = document.querySelector('.reset');
 var headerColor = document.querySelector('.header-h1');
 var rangeMax = document.querySelector('.range-numbers');
 
+
 // counts
 var count = 0;
 var guessCount = 0;
@@ -16,10 +17,11 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
-userGuess.addEventListener('focusout', theUsersGuess);
+userGuess.addEventListener('click', theUsersGuess);
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
+// focusout
 
 // on page load
 newNumber();
@@ -62,7 +64,7 @@ function newNumber() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min));
   rangeMax.innerText = max; 
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -71,7 +73,7 @@ function newNumberTwo() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
   rangeMax.innerText = max;
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -80,7 +82,7 @@ function newNumberThree() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
   rangeMax.innerText = max;
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -89,7 +91,7 @@ function newNumberFour() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
   rangeMax.innerText = max;
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -98,7 +100,7 @@ function newNumberFive() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
   rangeMax.innerText = max;
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -107,7 +109,7 @@ function newNumberSix() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
   rangeMax.innerText = max;
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -116,7 +118,7 @@ function newNumberSeven() {
   min = 1;
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
   rangeMax.innerText = max;
-  console.log(randomNumber)
+  console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
@@ -185,6 +187,7 @@ function levelTwo() {
   guessBttn.style.backgroundColor = '#EE6B2D';
   clearField.style.backgroundColor = '#EE6B2D';
   resetGame.style.backgroundColor = '#EE6B2D';
+  document.querySelector('.one').classList.remove('hide-one');
 }
 
 function levelThree() {
@@ -196,6 +199,7 @@ function levelThree() {
   guessBttn.style.backgroundColor = '#F9CC46';
   clearField.style.backgroundColor = '#F9CC46';
   resetGame.style.backgroundColor = '#F9CC46';
+  document.querySelector('.two').classList.remove('hide-two');
 }
 
 function levelFour() {
@@ -207,6 +211,7 @@ function levelFour() {
   guessBttn.style.backgroundColor = '#387D22';
   clearField.style.backgroundColor = '#387D22';
   resetGame.style.backgroundColor = '#387D22';
+  document.querySelector('.three').classList.remove('hide-three');
 }
 
 function levelFive() {
@@ -214,10 +219,11 @@ function levelFive() {
   userGuess.style.color = '#001A8E';
   headerColor.style.color = '#001A8E';
   showUserGuess.style.color = '#001A8E';
-  showUserGuess.innerText = 'You saved Unicorn Leta';
+  showUserGuess.innerText = 'You saved Unicorn Lousia';
   guessBttn.style.backgroundColor = '#001A8E';
   clearField.style.backgroundColor = '#001A8E';
   resetGame.style.backgroundColor = '#001A8E';
+  document.querySelector('.four').classList.remove('hide-four');
 }
 
 function levelSix() {
@@ -225,10 +231,11 @@ function levelSix() {
   userGuess.style.color = '#43137D';
   headerColor.style.color = '#43137D';
   showUserGuess.style.color = '#43137D';
-  showUserGuess.innerText = 'You saved Unicorn Louisa';
+  showUserGuess.innerText = 'You saved Unicorn Leta';
   guessBttn.style.backgroundColor = '#43137D';
   clearField.style.backgroundColor = '#43137D';
   resetGame.style.backgroundColor = '#43137D';
+  document.querySelector('.five').classList.remove('hide-five');
 }
 
 function levelSeven() {
@@ -240,28 +247,13 @@ function levelSeven() {
   guessBttn.style.backgroundColor = '#AC47F6';
   clearField.style.backgroundColor = '#AC47F6';
   resetGame.style.backgroundColor = '#AC47F6';
-  winnerWinner();
+  document.querySelector('.six').classList.remove('hide-six');
+ 
 }
 
 function winnerWinner() {
-  console.log('blonde')
   lowOrHigh.innerText = 'You have rescued all of the unicorns, hit reset to play again';
-  alert('cool shit');
 }
 
 
-// userGuess.addEventListener('keyup', enableBttns)
-// disableBttns();
 
-// function disableBttns() {
-//   clearField.disabled = 'true';
-//   guessBttn.disabled = 'true';
-//   resetGame.disabled = 'true';
-// }
-
-// function enableBttns() {
-//   clearField.disabled = !clearField.disabled;
-//   guessBttn.disabled = !guessBttn.disabled;
-//   resetGame.disabled = !resetGame.disabled;
-  
-// }
