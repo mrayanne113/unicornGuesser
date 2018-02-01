@@ -17,7 +17,7 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
-userGuess.addEventListener('click', theUsersGuess);
+userGuess.addEventListener('focusout', theUsersGuess);
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
