@@ -89,7 +89,13 @@ input {
 
 .one {
   top: 500px;
-  left: 30px;
+  animation: unicornOne 10s infinite;
+}
+
+@keyframes unicornOne {
+  0% {left: 90px;}
+  50% {left: 50px; top: 300px;}
+  100% {left: 90px;}
 }
 
 .hide-two {
@@ -97,8 +103,14 @@ input {
 }
 
 .two {
- top: 700px;
- left: 714px;
+ top: 575px;
+ animation: unicornTwo 10s infinite;
+}
+
+@keyframes unicornTwo {
+  0% {left: 815px; top: 300px;}
+  50% {left: 800px; top: 575px;}
+  100% {left: 835px; top: 300px;}
 }
 
 .hide-three {
@@ -106,8 +118,16 @@ input {
 }
 
 .three {
-  top: 800px;
-  left: 26px;
+  width: 115px;
+  height: 163px;
+  top: 200px;
+  animation: unicornThree 10s infinite;
+}
+
+@keyframes unicornThree {
+  0% {left: 26px;}
+  50% {top: 15px;}
+  100% {left: 26px;}
 }
 
 .hide-four {
@@ -116,7 +136,13 @@ input {
 
 .four {
   top: 300px;
-  left: 720px;
+  animation: unicornFour 10s infinite;
+}
+
+@keyframes unicornFour {
+  0% {left: 720px;}
+  50% {left: 200px;}
+  100% {left: 720px;}
 }
 
 .hide-five {
@@ -124,8 +150,14 @@ input {
 }
 
 .five {
-  top: 950px;
-  left: 600px;
+  top: 120px;
+  animation: unicornFive 10s infinite;
+}
+
+@keyframes unicornFive {
+  0% {left: 600px;}
+  50% {left: 100px; top: 200px;}
+  100% {left: 600px; top: 200px;}
 }
 
 .hide-six {
@@ -133,10 +165,30 @@ input {
 }
 
 .six {
+  top: 575px;
+  animation: unicornSix 10s infinite;
+}
+
+@keyframes unicornSix {
+  0% {left: 313px;}
+  50% {left: 33px;}
+  100% {left: 313px;}
+}
+
+.seven {
   height: 150px;
   width: 155px;
-  top: 1005px;
-  left: 200px;
+  animation: unicornSeven 10s infinite;
+}
+
+.hide-seven {
+  display: none;
+}
+
+@keyframes unicornSeven {
+  0% {left: 213px;}
+  50% {top: 433px; left: 331px;}
+  100% {left: 513px;}
 }
 
 .guess-number {
@@ -155,7 +207,7 @@ input {
   font-weight: 300;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  font-size: 10rem;
+  font-size: 7rem;
 }
 
 .low-or-high {
@@ -193,7 +245,7 @@ h3 {
 
 
 
-@media (min-width: 300px) {
+@media (max-width: 300px) {
  body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;

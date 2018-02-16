@@ -17,7 +17,7 @@ var unicorns = 0;
 
 // event listeners
 guessBttn.addEventListener('click', theUsersGuess);
-userGuess.addEventListener('focusout', theUsersGuess);
+// userGuess.addEventListener('keyup', theUsersGuess);
 clearField.addEventListener('click', clearInput);
 resetGame.addEventListener('click', resetTheGame);
 
@@ -243,7 +243,7 @@ function levelSeven() {
   userGuess.style.color = '#AC47F6';
   headerColor.style.color = '#AC47F6';
   showUserGuess.style.color = '#AC47F6';
-  showUserGuess.innerText = 'You saved Unicorn Jeff';
+  showUserGuess.innerText = 'You saved Unicorn Jhun';
   guessBttn.style.backgroundColor = '#AC47F6';
   clearField.style.backgroundColor = '#AC47F6';
   resetGame.style.backgroundColor = '#AC47F6';
@@ -252,6 +252,8 @@ function levelSeven() {
 }
 
 function winnerWinner() {
+  document.querySelector('.seven').classList.remove('hide-seven');
+  showUserGuess.innerText = 'You saved Unicorn Jeff';
   lowOrHigh.innerText = 'You have rescued all of the unicorns, hit reset to play again';
 }
 
