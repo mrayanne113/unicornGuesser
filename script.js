@@ -1,40 +1,33 @@
-// varaibles
-var userGuess = document.querySelector('.user-guess');
-var guessBttn = document.querySelector('.guess-number');
-var lowOrHigh = document.querySelector('.low-or-high');
-var showUserGuess = document.querySelector('.user-guess-number');
-var clearField = document.querySelector('.clear-number');
-var resetGame = document.querySelector('.reset');
-var headerColor = document.querySelector('.header-h1');
-var rangeMax = document.querySelector('.range-numbers');
+const userGuess = document.querySelector('.user-guess');
+const guessBtn = document.querySelector('.guess-number');
+const lowOrHighDisplay = document.querySelector('.low-or-high');
+const showUserGuessDisplay = document.querySelector('.user-guess-number');
+const clearFieldBtn = document.querySelector('.clear-number');
+const resetGameBtn = document.querySelector('.reset');
+const headerColor = document.querySelector('.header-h1');
+const rangeMaxDisplay = document.querySelector('.range-numbers');
+let guessCount = 0;
+let randomNumber = 0;
+let unicornCounter = 0;
 
+guessBtn.addEventListener('click', theUsersGuess);
+clearFieldBtn.addEventListener('click', clearInput);
+resetGameBtn.addEventListener('click', resetTheGame);
 
-// counts
-var count = 0;
-var guessCount = 0;
-var randomNumber = 0;
-var unicorns = 0;
+newNumber(1, 15);
 
-// event listeners
-guessBttn.addEventListener('click', theUsersGuess);
-// userGuess.addEventListener('keyup', theUsersGuess);
-clearField.addEventListener('click', clearInput);
-resetGame.addEventListener('click', resetTheGame);
-
-// focusout
-
-// on page load
-newNumber();
-
-
-// functions
 function theUsersGuess() {
   event.preventDefault();
-  var guess = userGuess.value;
-  var guessParse = parseInt(guess);
-  clearInput();
-  showUserGuess.innerText = guess;
+  let guess = userGuess.value;
+  let guessParse = parseInt(guess);
+  showUserGuessDisplay.innerText = guess;
   feedbackOfGuess(guessParse);
+  clearInput();
+}
+
+function clearInput() {
+  event.preventDefault();
+  userGuess.value = '';
 }
 
 function feedbackOfGuess(guessParse) {
@@ -43,102 +36,35 @@ function feedbackOfGuess(guessParse) {
     checkLevel();
   } else if (randomNumber > guessParse) {
     guessCount++;
-    lowOrHigh.innerText = 'That was too low';
+    lowOrHighDisplay.innerText = 'That was too low';
   } else if (randomNumber < guessParse) {
     guessCount++;
-    lowOrHigh.innerText = 'That was too high'
+    lowOrHighDisplay.innerText = 'That was too high';
   } else if (guessParse >= 110) {
-    showUserGuess.innerText = 'Thats not the in the range';
-  } else if (guessParse.length = 3){
-    showUserGuess.innerText = '??';
-    lowOrHigh.innerText = 'Error';
+    showUserGuessDisplay.innerText = 'That\'s not the in the range';
   } else {
-    showUserGuess.innerText = '??';
-    lowOrHigh.innerText = 'Error';
-  } 
+    showUserGuessDisplay.innerText = '??';
+    lowOrHighDisplay.innerText = 'Error';
+  }
   document.querySelector('.guess-count').innerText = guessCount;
 }
 
-function newNumber() {
-  max = 15;
-  min = 1;
+function newNumber(min, max) {
   randomNumber = parseInt(Math.round(Math.random() * (max - min) + min));
-  rangeMax.innerText = max; 
-  console.log('Cheater the answer is ' + randomNumber);
-  return randomNumber;
-}
-
-function newNumberTwo() {
-  max = 30;
-  min = 1;
-  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
-  rangeMax.innerText = max;
-  console.log('Cheater the answer is ' + randomNumber);
-  return randomNumber;
-}
-
-function newNumberThree() {
-  max = 45;
-  min = 1;
-  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
-  rangeMax.innerText = max;
-  console.log('Cheater the answer is ' + randomNumber);
-  return randomNumber;
-}
-
-function newNumberFour() {
-  max = 60;
-  min = 1;
-  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
-  rangeMax.innerText = max;
-  console.log('Cheater the answer is ' + randomNumber);
-  return randomNumber;
-}
-
-function newNumberFive() {
-  max = 85;
-  min = 1;
-  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
-  rangeMax.innerText = max;
-  console.log('Cheater the answer is ' + randomNumber);
-  return randomNumber;
-}
-
-function newNumberSix() {
-  max = 90;
-  min = 1;
-  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
-  rangeMax.innerText = max;
-  console.log('Cheater the answer is ' + randomNumber);
-  return randomNumber;
-}
-
-function newNumberSeven() {
-  max = 110;
-  min = 1;
-  randomNumber = parseInt(Math.round(Math.random() * (max - min) + min)); 
-  rangeMax.innerText = max;
+  rangeMaxDisplay.innerText = max;
   console.log('Cheater the answer is ' + randomNumber);
   return randomNumber;
 }
 
 function resetTheGame() {
   clearInput();
-  newNumber();
-  count = 0;
+  newNumber(1, 15);
   guessCount = 0;
-  unicorns = 0;
-  document.querySelector('.high-score').innerText = count;
+  unicornCounter = 0;
   document.querySelector('.guess-count').innerText = guessCount;
-  document.querySelector('.unicorn-rescued').innerText = unicorns;
-  lowOrHigh.innerText = 'Guess a number between 1 and 15 to start, if you rescue a unicorn the range opens up by 15';
+  document.querySelector('.unicorn-rescued').innerText = unicornCounter;
+  lowOrHighDisplay.innerText = 'Guess a number between 1 and 15 to start, if you rescue an unicorn the range opens up by 15';
 }
-
-function clearInput() {
-  event.preventDefault();
-  userGuess.value = '';
-}
-
 
 function levelClear() {
   event.preventDefault();
@@ -146,116 +72,60 @@ function levelClear() {
 }
 
 function checkLevel() {
-  if (unicorns === 1) {
-    levelTwo();
-    newNumberTwo();
-  } else if (unicorns === 2) {
-    levelThree();
-    newNumberThree();
-  } else if (unicorns === 3) {
-    levelFour();
-    newNumberFour();
-  } else if (unicorns === 4) {
-    levelFive();
-    newNumberFive();
-  } else if (unicorns === 5) {
-    levelSix();
-    newNumberSix();
-  } else if (unicorns === 6) {
-    levelSeven();
-    newNumberSeven();
-  } else if (unicorns === 7) {
+  if (unicornCounter === 1) {
+    // orange
+    levelColorChange('#EE6B2D', 'David');
+    document.querySelector('.one').classList.remove('hide-one');
+    newNumber(1, 30);
+  } else if (unicornCounter === 2) {
+    // yellow
+    levelColorChange('#F9CC46', 'Pam');
+    document.querySelector('.two').classList.remove('hide-two');
+    newNumber(1, 45);
+  } else if (unicornCounter === 3) {
+    // green
+    levelColorChange('#387D22', 'Nathaniel');
+    document.querySelector('.three').classList.remove('hide-three');
+    newNumber(1, 60);
+  } else if (unicornCounter === 4) {
+    // blue
+    levelColorChange('#001A8E', 'Lousia')
+    document.querySelector('.four').classList.remove('hide-four');
+    newNumber(1, 75);
+  } else if (unicornCounter === 5) {
+    // purple
+    levelColorChange('#43137D', 'Leta');
+    document.querySelector('.five').classList.remove('hide-five');
+    newNumber(1, 90);
+  } else if (unicornCounter === 6) {
+    // voliet
+    levelColorChange('#AC47F6', 'Jhun');
+    newNumber(1, 110);
+  } else if (unicornCounter === 7) {
     winnerWinner();
   }
 }
 
 function WinnerLevelUp() {
-  count++;
-  unicorns++;
+  unicornCounter++;
   guessCount++;
-  document.querySelector('.unicorn-rescued').innerText = unicorns;
-  document.querySelector('.high-score').innerText = count;
-  lowOrHigh.innerText = 'BOOM!! Keep on Guessing';
+  document.querySelector('.unicorn-rescued').innerText = unicornCounter;
+  lowOrHighDisplay.innerText = 'BOOM!! Keep on Guessing';
 }
 
-function levelTwo() {
-  // orange
-  userGuess.style.color = '#EE6B2D';
-  headerColor.style.color = '#EE6B2D';
-  showUserGuess.style.color = '#EE6B2D';
-  showUserGuess.innerText = 'You saved Unicorn David';
-  guessBttn.style.backgroundColor = '#EE6B2D';
-  clearField.style.backgroundColor = '#EE6B2D';
-  resetGame.style.backgroundColor = '#EE6B2D';
-  document.querySelector('.one').classList.remove('hide-one');
-}
-
-function levelThree() {
-  // yellow
-  userGuess.style.color = '#F9CC46';
-  headerColor.style.color = '#F9CC46';
-  showUserGuess.style.color = '#F9CC46';
-  showUserGuess.innerText = 'You saved Unicorn Pam';
-  guessBttn.style.backgroundColor = '#F9CC46';
-  clearField.style.backgroundColor = '#F9CC46';
-  resetGame.style.backgroundColor = '#F9CC46';
-  document.querySelector('.two').classList.remove('hide-two');
-}
-
-function levelFour() {
-  // green
-  userGuess.style.color = '#387D22';
-  headerColor.style.color = '#387D22';
-  showUserGuess.style.color = '#387D22';
-  showUserGuess.innerText = 'You saved Unicorn Nathaniel';
-  guessBttn.style.backgroundColor = '#387D22';
-  clearField.style.backgroundColor = '#387D22';
-  resetGame.style.backgroundColor = '#387D22';
-  document.querySelector('.three').classList.remove('hide-three');
-}
-
-function levelFive() {
-  // blue
-  userGuess.style.color = '#001A8E';
-  headerColor.style.color = '#001A8E';
-  showUserGuess.style.color = '#001A8E';
-  showUserGuess.innerText = 'You saved Unicorn Lousia';
-  guessBttn.style.backgroundColor = '#001A8E';
-  clearField.style.backgroundColor = '#001A8E';
-  resetGame.style.backgroundColor = '#001A8E';
-  document.querySelector('.four').classList.remove('hide-four');
-}
-
-function levelSix() {
-  // purple
-  userGuess.style.color = '#43137D';
-  headerColor.style.color = '#43137D';
-  showUserGuess.style.color = '#43137D';
-  showUserGuess.innerText = 'You saved Unicorn Leta';
-  guessBttn.style.backgroundColor = '#43137D';
-  clearField.style.backgroundColor = '#43137D';
-  resetGame.style.backgroundColor = '#43137D';
-  document.querySelector('.five').classList.remove('hide-five');
-}
-
-function levelSeven() {
-  // voliet
-  userGuess.style.color = '#AC47F6';
-  headerColor.style.color = '#AC47F6';
-  showUserGuess.style.color = '#AC47F6';
-  showUserGuess.innerText = 'You saved Unicorn Jhun';
-  guessBttn.style.backgroundColor = '#AC47F6';
-  clearField.style.backgroundColor = '#AC47F6';
-  resetGame.style.backgroundColor = '#AC47F6';
-  document.querySelector('.six').classList.remove('hide-six');
- 
+function levelColorChange(color, name) {
+  userGuess.style.color = color;
+  headerColor.style.color = color;
+  showUserGuessDisplay.style.color = color;
+  showUserGuessDisplay.innerText = `You saved Unicorn ${name}`;
+  guessBtn.style.backgroundColor = color;
+  clearFieldBtn.style.backgroundColor = color;
+  resetGameBtn.style.backgroundColor = color;
 }
 
 function winnerWinner() {
+  userGuess.disabled = true;
   document.querySelector('.seven').classList.remove('hide-seven');
-  showUserGuess.innerText = 'You saved Unicorn Jeff';
-  lowOrHigh.innerText = 'You have rescued all of the unicorns, hit reset to play again';
+  showUserGuessDisplay.innerText = 'You saved Unicorn Jeff';
+  lowOrHighDisplay.innerText = 'You have rescued all of the unicorns, hit reset to play again';
 }
-
-
-
