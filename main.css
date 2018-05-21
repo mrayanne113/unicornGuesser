@@ -1,30 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html {
-  font-size: 10px;
   font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
   font-weight: 300;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  cursor: url(images/sad-fat-unicorn.png), auto;
-}
-
 header {
-  background-color: #404041;
-  font-size: 4rem;
   display: flex;
   justify-content: center;
   height: 116px;
+  font-size: 4rem;
+  background-color: #404041;
 }
 
 .header-h1 {
+  margin: 0;
   color: #EB3223;
   font-weight: 700;
-  margin: 0;
 }
 
 .header-h1-span {
@@ -34,8 +30,8 @@ header {
 
 .all-inside {
   width: 629px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   text-align: center;
 }
 
@@ -45,23 +41,23 @@ header {
 
 input {
   width: 611px;
-  font-size: 3rem;
-  font-weight: 300;
   padding-left: 10px;
   color: #EB3223;
+  font-size: 3rem;
+  font-weight: 300;
 }
 
 .guess-bttn, 
 .reset {
   width: 300px;
   height: 35px;
-  margin-top: 25px;
-  font-size: 2rem;
-  color: #FFFFFF;
-  background-color: #929497;
-  font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
   border-radius: 16px;
+  margin-top: 25px;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  background-color: #929497;
 }
 
 .guess-bttn:disabled, 
@@ -78,9 +74,9 @@ input {
 }
 
 .size {
-  width: 200px;
   position: absolute;
   z-index: 1;
+  width: 200px;
 } 
 
 .hide-one {
@@ -94,7 +90,7 @@ input {
 
 @keyframes unicornOne {
   0% {left: 90px;}
-  50% {left: 50px; top: 300px;}
+  50% { top: 300px;left: 50px;}
   100% {left: 90px;}
 }
 
@@ -108,9 +104,9 @@ input {
 }
 
 @keyframes unicornTwo {
-  0% {left: 815px; top: 300px;}
-  50% {left: 800px; top: 575px;}
-  100% {left: 835px; top: 300px;}
+  0% { top: 300px;left: 815px;}
+  50% { top: 575px;left: 800px;}
+  100% { top: 300px;left: 835px;}
 }
 
 .hide-three {
@@ -118,9 +114,9 @@ input {
 }
 
 .three {
+  top: 200px;
   width: 115px;
   height: 163px;
-  top: 200px;
   animation: unicornThree 10s infinite;
 }
 
@@ -156,8 +152,8 @@ input {
 
 @keyframes unicornFive {
   0% {left: 600px;}
-  50% {left: 100px; top: 200px;}
-  100% {left: 600px; top: 200px;}
+  50% { top: 200px;left: 100px;}
+  100% { top: 200px;left: 600px;}
 }
 
 .hide-six {
@@ -176,8 +172,8 @@ input {
 }
 
 .seven {
-  height: 150px;
   width: 155px;
+  height: 150px;
   animation: unicornSeven 10s infinite;
 }
 
@@ -198,16 +194,16 @@ input {
 .last-guess, 
 .low-or-high {
   margin-top: 20px;
-  font-size: 2.5rem;
   color: #404041;
+  font-size: 2.5rem;
 }
 
 .user-guess-number {
   color: #EB3223;
-  font-weight: 300;
   font-family: 'Open Sans', sans-serif;
-  text-align: center;
   font-size: 7rem;
+  font-weight: 300;
+  text-align: center;
 }
 
 .low-or-high {
@@ -222,25 +218,23 @@ input {
 
 
 h3 {
-  font-weight: 300;
-  font-size: 2rem;
   margin-top: 20px;
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .styling-p {
   font-size: 2rem;
 }
 
-.high-score-placeholder, 
-.high-score,
 .guess-count-placeholder,
 .guess-count,
 .unicorn-rescued-placeholder,
 .unicorn-rescued {
-  font-size: 2.5rem;
-  color: #404041;
-  font-weight: 300;
   margin-left: 5px;
+  color: #404041;
+  font-size: 2.5rem;
+  font-weight: 300;
 }
 
 
@@ -252,9 +246,9 @@ h3 {
  }
  
  header {
+  align-items: center;
   height: 200px;
   font-size: 6rem;
-  align-items: center;
  }
 
  .all-inside {
@@ -263,15 +257,15 @@ h3 {
 
  input {
    width: 91%;
-   font-size: 7rem;
    border: 0.5px solid #404041;
+   font-size: 7rem;
  }
 
  .guess-bttn,
  .reset {
-   border-radius: 51px;
    width: 93%;
    height: 90px;
+   border-radius: 51px;
    font-size: 6rem;
  }
 
@@ -280,19 +274,16 @@ h3 {
  }
 
  .guess-number {
-   margin-right: 0;
    margin-top: 45px;
+   margin-right: 0;
  }
 
  .last-guess,
  .low-or-high,
- .high-score-placeholder, 
- .high-score,
  .guess-count-placeholder,
  .guess-count,
  .unicorn-rescued-placeholder,
  .unicorn-rescued {
   font-size: 3.5rem;
  }
-
 }
